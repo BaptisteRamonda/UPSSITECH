@@ -1,15 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int remplaceTab(int N, int* T){
     //Initialisation des variables
-    int i,X,Y;
+    int i,j=0,X,Y;
+    int occur=0;
+    int tIndice[100];
 
     //Affichage du tableau de base
     printf("\n{");
     for (i=0; i<N; i++){
         printf(" %d", T[i]);
     }
-    printf("}\n");
+    printf(" }\n");
 
     //Maj des valeurs de recherche
     printf("\nEntrez la valeur à remplacer : ");
@@ -19,15 +22,27 @@ int remplaceTab(int N, int* T){
 
     //Maj du tableau
     for (i=0; i<N; i++){
-        if(T[i] == X)T[i]=Y;
+        if(T[i] == X){
+            T[i]=Y;
+            occur++;
+            tIndice[j] = i;
+            j++;
+        }
     }
 
-    //Affichage du nouveau tableau
+    //Affichage des résultats
     printf("\n{");
     for (i=0; i<N; i++){
         printf(" %d", T[i]);
     }
-    printf("}\n\n");
+    printf(" }\n");
+    printf("Nombre d'occurences remplacées: %d\n",occur);
+    printf("Tableau des indices remplacés: ");
+    printf("{");
+    for (i=0; i<j; i++){
+        printf(" %d", tIndice[i]);
+    }
+    printf(" }\n\n");
     return 0;
 }
 
