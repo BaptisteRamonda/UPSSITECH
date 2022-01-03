@@ -1,0 +1,12 @@
+7)
+    a/ Non, on ne peut pas transformer la fonction récursive AFFICHE_ARBRE en fonction itérative sans modifier
+    le type ARBRE ou utiliser de structure de données auxiliaire. On aurait forcément de la perte d'information
+    au fil des itérations.
+
+    b/ On pourait passer par une structure contenant un tableau de noeuds, ainsi que le nombre de noeuds du
+    tableau pour pouvoir synthétiser plus clairement l'abre à afficher.
+
+    c/ On pourrait modifier le type Arbre en rajoutant dans la structure des informations permettant, dans le
+    cas où ces "arbres" sont des noeuds, de remonter jusqu'à la racine de l'arbre. On pourrait aussi
+    éventuellement rajouter des informations permettant de se situer dans le parcours que l'on est en train de 
+    réaliser.
